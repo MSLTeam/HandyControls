@@ -63,13 +63,10 @@
         x:Key="LightPrimaryBrush"
         o:Freeze="True"
         Color="{t:StaticColor LightPrimaryColor}" />
-    <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="{t:StaticColor PrimaryColor}"/>
-    <!--
     <LinearGradientBrush x:Key="PrimaryBrush" o:Freeze="True" StartPoint="0,0" EndPoint="1,0">
         <GradientStop o:Freeze="True" Offset="0" Color="{t:StaticColor PrimaryColor}" />
         <GradientStop o:Freeze="True" Offset="1" Color="{t:StaticColor DarkPrimaryColor}" />
     </LinearGradientBrush>
-    -->
     <SolidColorBrush
         x:Key="DarkPrimaryBrush"
         o:Freeze="True"
