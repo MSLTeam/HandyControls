@@ -42,7 +42,7 @@ public class Growl : Control
     public static readonly DependencyProperty ShowPersianDateTimeProperty = DependencyProperty.Register(
         nameof(ShowPersianDateTime), typeof(bool), typeof(Growl), new PropertyMetadata(ValueBoxes.FalseBox));
     public static readonly DependencyProperty ShowDateTimeProperty = DependencyProperty.Register(
-        nameof(ShowDateTime), typeof(bool), typeof(Growl), new PropertyMetadata(ValueBoxes.TrueBox));
+        nameof(ShowDateTime), typeof(bool), typeof(Growl), new PropertyMetadata(ValueBoxes.FalseBox));
     public static readonly DependencyProperty MessageProperty = DependencyProperty.Register(
         nameof(Message), typeof(string), typeof(Growl), new PropertyMetadata(default(string)));
     public static readonly DependencyProperty TimeProperty = DependencyProperty.Register(

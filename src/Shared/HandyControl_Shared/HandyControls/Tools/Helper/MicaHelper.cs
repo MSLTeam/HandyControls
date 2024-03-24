@@ -36,10 +36,10 @@ public static class MicaHelper
     private static int _pvFalseAttribute = 0x00;
 
     /// <summary>
-    /// Checks if the current <see cref="Windows"/> supports selected <see cref="BackgroundType"/>.
+    /// Checks if the current Windows supports selected BackgroundType.
     /// </summary>
     /// <param name="type">Background type to check.</param>
-    /// <returns><see langword="true"/> if <see cref="BackgroundType"/> is supported.</returns>
+    /// <returns><see langword="true"/> if BackgroundType is supported.</returns>
     public static bool IsSupported(this BackdropType type)
     {
         if (!OSVersionHelper.IsWindowsNT) { return false; }

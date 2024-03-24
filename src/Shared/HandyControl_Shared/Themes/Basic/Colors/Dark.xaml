@@ -6,8 +6,8 @@
     xmlns:t="clr-namespace:HandyControl.Themes">
 
     <Color x:Key="LightPrimaryColor">#044289</Color>
-    <Color x:Key="PrimaryColor">#326cf3</Color>
-    <Color x:Key="DarkPrimaryColor">#326cf3</Color>
+    <Color x:Key="PrimaryColor">#0078D4</Color>
+    <Color x:Key="DarkPrimaryColor">#0078D4</Color>
 
     <Color x:Key="LightDangerColor">#450c0f</Color>
     <Color x:Key="DangerColor">#db3340</Color>
@@ -36,12 +36,12 @@
 
     <Color x:Key="BorderColor">#3f3f46</Color>
     <Color x:Key="SecondaryBorderColor">#555555</Color>
-    <Color x:Key="BackgroundColor">#eeeeee</Color>
-    <Color x:Key="RegionColor">#1c1c1c</Color>
-    <Color x:Key="SecondaryRegionColor">#2d2d30</Color>
+    <Color x:Key="BackgroundColor">#141414</Color>
+    <Color x:Key="RegionColor">#1C1C1C</Color>
+    <Color x:Key="SecondaryRegionColor">#141414</Color>
     <Color x:Key="ThirdlyRegionColor">#424242</Color>
-    <Color x:Key="TitleColor">#326cf3</Color>
-    <Color x:Key="SecondaryTitleColor">#326cf3</Color>
+    <Color x:Key="TitleColor">#0078D4</Color>
+    <Color x:Key="SecondaryTitleColor">#0078D4</Color>
 
     <Color x:Key="DefaultColor">#686868</Color>
     <Color x:Key="DarkDefaultColor">#686868</Color>
@@ -63,10 +63,13 @@
         x:Key="LightPrimaryBrush"
         o:Freeze="True"
         Color="{t:StaticColor LightPrimaryColor}" />
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="{t:StaticColor PrimaryColor}"/>
+    <!--
     <LinearGradientBrush x:Key="PrimaryBrush" o:Freeze="True" StartPoint="0,0" EndPoint="1,0">
         <GradientStop o:Freeze="True" Offset="0" Color="{t:StaticColor PrimaryColor}" />
         <GradientStop o:Freeze="True" Offset="1" Color="{t:StaticColor DarkPrimaryColor}" />
     </LinearGradientBrush>
+    -->
     <SolidColorBrush
         x:Key="DarkPrimaryBrush"
         o:Freeze="True"

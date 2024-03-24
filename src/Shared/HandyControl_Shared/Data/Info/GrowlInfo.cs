@@ -9,7 +9,7 @@ public class GrowlInfo
 {
     public string Message { get; set; }
 
-    public bool ShowDateTime { get; set; } = true;
+    public bool ShowDateTime { get; set; } = false;
 
     public bool ShowPersianDateTime { get; set; } = false;
 

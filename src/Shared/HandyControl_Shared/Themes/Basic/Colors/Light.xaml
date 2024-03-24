@@ -5,8 +5,8 @@
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
 
     <Color x:Key="LightPrimaryColor">#f3fbff</Color>
-    <Color x:Key="PrimaryColor">#326cf3</Color>
-    <Color x:Key="DarkPrimaryColor">#326cf3</Color>
+    <Color x:Key="PrimaryColor">#0078D4</Color>
+    <Color x:Key="DarkPrimaryColor">#0078D4</Color>
 
     <Color x:Key="LightDangerColor">#fff6f7</Color>
     <Color x:Key="DangerColor">#db3340</Color>
@@ -33,14 +33,14 @@
     <Color x:Key="ReverseTextColor">#212121</Color>
     <Color x:Key="TextIconColor">White</Color>
 
-    <Color x:Key="BorderColor">#e0e0e0</Color>
+    <Color x:Key="BorderColor">#FFE6E6E6</Color>
     <Color x:Key="SecondaryBorderColor">#757575</Color>
-    <Color x:Key="BackgroundColor">#eeeeee</Color>
+    <Color x:Key="BackgroundColor">#FFF7FAFC</Color>
     <Color x:Key="RegionColor">#ffffff</Color>
-    <Color x:Key="SecondaryRegionColor">#eeeeee</Color>
+    <Color x:Key="SecondaryRegionColor">#FFF3F3F3</Color>
     <Color x:Key="ThirdlyRegionColor">White</Color>
-    <Color x:Key="TitleColor">#326cf3</Color>
-    <Color x:Key="SecondaryTitleColor">#326cf3</Color>
+    <Color x:Key="TitleColor">#0078D4</Color>
+    <Color x:Key="SecondaryTitleColor">#0078D4</Color>
 
     <Color x:Key="DefaultColor">White</Color>
     <Color x:Key="DarkDefaultColor">#f5f5f5</Color>
@@ -58,10 +58,13 @@
     <system:UInt32 x:Key="BlurGradientValue">0x99FFFFFF</system:UInt32>
 
     <SolidColorBrush o:Freeze="True" x:Key="LightPrimaryBrush" Color="{t:StaticColor LightPrimaryColor}"/>
+    <SolidColorBrush o:Freeze="True" x:Key="PrimaryBrush" Color="{t:StaticColor PrimaryColor}"/>
+    <!--
     <LinearGradientBrush o:Freeze="True" x:Key="PrimaryBrush" EndPoint="1,0" StartPoint="0,0">
         <GradientStop o:Freeze="True" Color="{t:StaticColor PrimaryColor}" Offset="0"/>
         <GradientStop o:Freeze="True" Color="{t:StaticColor DarkPrimaryColor}" Offset="1"/>
     </LinearGradientBrush>
+    -->
     <SolidColorBrush o:Freeze="True" x:Key="DarkPrimaryBrush" Color="{t:StaticColor DarkPrimaryColor}"/>
 
     <SolidColorBrush o:Freeze="True" x:Key="PrimaryTextBrush" Color="{t:StaticColor PrimaryTextColor}"/>
