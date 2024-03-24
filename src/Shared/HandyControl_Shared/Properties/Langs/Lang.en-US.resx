@@ -244,7 +244,7 @@
     <value>About</value>
   </data>
   <data name="MainWindow_Menu_Frpc" xml:space="preserve">
-    <value>Frp</value>
+    <value>Frpc</value>
   </data>
   <data name="MainWindow_Menu_Home" xml:space="preserve">
     <value>Home</value>
@@ -253,10 +253,10 @@
     <value>P2P</value>
   </data>
   <data name="MainWindow_Menu_ServerList" xml:space="preserve">
-    <value>Server</value>
+    <value>Servers</value>
   </data>
   <data name="MainWindow_Menu_Setting" xml:space="preserve">
-    <value>Setting</value>
+    <value>Settings</value>
   </data>
   <data name="Pages_Home_LaunchServer" xml:space="preserve">
     <value>Launch Server</value>
@@ -283,6 +283,6 @@
     <value>Server Status</value>
   </data>
   <data name="Pages_ServerList_Title" xml:space="preserve">
-    <value>Server list (double-click to quickly start server):</value>
+    <value>Server List (Double-click to launch a server):</value>
   </data>
 </root>
