@@ -269,6 +269,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Markup\Internals\MultiBindingExtensionBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Markup\UpdatableMarkupExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\RunningDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\LangExtension.cs" />
     <Compile Include="..\..\Shared\HandyControl_Shared\Input\SimpleMouseBinding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interactivity\EventToCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interactivity\IEventArgsConverter.cs" />
@@ -342,7 +343,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Converter\ThicknessSplitConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\DependencyObjectExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\FrameworkElementExtension.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\LangExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\StringExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\ValueExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Generator\ComparerGenerator.cs" />

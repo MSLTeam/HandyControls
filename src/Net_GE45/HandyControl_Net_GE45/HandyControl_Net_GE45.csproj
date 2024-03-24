@@ -27,6 +27,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
+    <Compile Include="..\..\Shared\HandyControl_Shared\Properties\Langs\LangManager.cs">
+      <Link>Properties\Langs\LangManager.cs</Link>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="..\..\Shared\HandyControl_Shared\Properties\Langs\LangProvider.cs">
       <Link>Properties\Langs\LangProvider.cs</Link>
       <AutoGen>True</AutoGen>
@@ -51,6 +56,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.en.resx">
       <Link>Properties\Langs\Lang.en.resx</Link>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.en-US.resx">
+      <Link>Properties\Langs\Lang.en-US.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="..\..\Shared\HandyControl_Shared\Properties\Langs\Lang.es.resx">
       <Link>Properties\Langs\Lang.es.resx</Link>

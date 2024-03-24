@@ -78,6 +78,24 @@ namespace HandyControl.Properties.Langs
             OnPropertyChanged(nameof(Yes));
             OnPropertyChanged(nameof(ZoomIn));
             OnPropertyChanged(nameof(ZoomOut));
+            /*
+            OnPropertyChanged(nameof(MainWindow_GrowlMsg_LatestVersion));
+            OnPropertyChanged(nameof(MainWindow_Menu_About));
+            OnPropertyChanged(nameof(MainWindow_Menu_Frpc));
+            OnPropertyChanged(nameof(MainWindow_Menu_Home));
+            OnPropertyChanged(nameof(MainWindow_Menu_OnlinePlay));
+            OnPropertyChanged(nameof(MainWindow_Menu_ServerList));
+            OnPropertyChanged(nameof(MainWindow_Menu_Setting));
+            OnPropertyChanged(nameof(Pages_Home_LaunchServer));
+            OnPropertyChanged(nameof(Pages_Home_Notice));
+            OnPropertyChanged(nameof(Pages_Home_P2PPlay));
+            OnPropertyChanged(nameof(Pages_Home_Recommendations));
+            OnPropertyChanged(nameof(Pages_OnlinePage_Dialog_Tips));
+            OnPropertyChanged(nameof(Pages_ServerList_Do));
+            OnPropertyChanged(nameof(Pages_ServerList_ServerName));
+            OnPropertyChanged(nameof(Pages_ServerList_Status));
+            OnPropertyChanged(nameof(Pages_ServerList_Title));
+            */
         }
 
         /// <summary>
@@ -281,6 +299,26 @@ namespace HandyControl.Properties.Langs
         ///   查找类似 缩小 的本地化字符串。
         /// </summary>
 		public string ZoomOut => Lang.ZoomOut;
+
+        /*
+        public string MainWindow_GrowlMsg_LatestVersion => Lang.MainWindow_GrowlMsg_LatestVersion;
+        public string MainWindow_Menu_About => Lang.MainWindow_Menu_About;
+        public string MainWindow_Menu_Frpc => Lang.MainWindow_Menu_Frpc;
+        public string MainWindow_Menu_Home => Lang.MainWindow_Menu_Home;
+        public string MainWindow_Menu_OnlinePlay => Lang.MainWindow_Menu_OnlinePlay;
+        public string MainWindow_Menu_ServerList => Lang.MainWindow_Menu_ServerList;
+        public string MainWindow_Menu_Setting => Lang.MainWindow_Menu_Setting;
+        public string Pages_Home_LaunchServer => Lang.Pages_Home_LaunchServer;
+        public string Pages_Home_Notice => Lang.Pages_Home_Notice;
+        public string Pages_Home_P2PPlay => Lang.Pages_Home_P2PPlay;
+        public string Pages_Home_Recommendations => Lang.Pages_Home_Recommendations;
+        public string Pages_OnlinePage_Dialog_Tips => Lang.Pages_OnlinePage_Dialog_Tips;
+        public string Pages_ServerList_Do => Lang.Pages_ServerList_Do;
+        public string Pages_ServerList_ServerName => Lang.Pages_ServerList_ServerName;
+        public string Pages_ServerList_Status => Lang.Pages_ServerList_Status;
+        public string Pages_ServerList_Title => Lang.Pages_ServerList_Title;
+        */
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -493,5 +531,23 @@ namespace HandyControl.Properties.Langs
         /// </summary>
 		public static string ZoomOut = nameof(ZoomOut);
 
+        /*
+        public static string MainWindow_GrowlMsg_LatestVersion = nameof(MainWindow_GrowlMsg_LatestVersion);
+        public static string MainWindow_Menu_About = nameof(MainWindow_Menu_About);
+        public static string MainWindow_Menu_Frpc = nameof(MainWindow_Menu_Frpc);
+        public static string MainWindow_Menu_Home = nameof(MainWindow_Menu_Home);
+        public static string MainWindow_Menu_OnlinePlay = nameof(MainWindow_Menu_OnlinePlay);
+        public static string MainWindow_Menu_ServerList = nameof(MainWindow_Menu_ServerList);
+        public static string MainWindow_Menu_Setting = nameof(MainWindow_Menu_Setting);
+        public static string Pages_Home_LaunchServer = nameof(Pages_Home_LaunchServer);
+        public static string Pages_Home_Notice = nameof(Pages_Home_Notice);
+        public static string Pages_Home_P2PPlay = nameof(Pages_Home_P2PPlay);
+        public static string Pages_Home_Recommendations = nameof(Pages_Home_Recommendations);
+        public static string Pages_OnlinePage_Dialog_Tips = nameof(Pages_OnlinePage_Dialog_Tips);
+        public static string Pages_ServerList_Do = nameof(Pages_ServerList_Do);
+        public static string Pages_ServerList_ServerName = nameof(Pages_ServerList_ServerName);
+        public static string Pages_ServerList_Status = nameof(Pages_ServerList_Status);
+        public static string Pages_ServerList_Title = nameof(Pages_ServerList_Title);
+        */
     }
 }
