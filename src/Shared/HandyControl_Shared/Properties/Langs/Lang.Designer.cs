@@ -516,5 +516,37 @@ namespace HandyControl.Properties.Langs
                 return ResourceManager.GetString("ZoomOut", resourceCulture);
             }
         }
+
+        public static string SelectAll
+        {
+            get
+            {
+                return ResourceManager.GetString("SelectAll", resourceCulture);
+            }
+        }
+
+        public static string Cut
+        {
+            get
+            {
+                return ResourceManager.GetString("Cut", resourceCulture);
+            }
+        }
+
+        public static string Copy
+        {
+            get
+            {
+                return ResourceManager.GetString("Copy", resourceCulture);
+            }
+        }
+
+        public static string Paste
+        {
+            get
+            {
+                return ResourceManager.GetString("Paste", resourceCulture);
+            }
+        }
     }
 }

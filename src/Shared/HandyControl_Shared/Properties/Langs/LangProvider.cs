@@ -78,6 +78,10 @@ namespace HandyControl.Properties.Langs
             OnPropertyChanged(nameof(Yes));
             OnPropertyChanged(nameof(ZoomIn));
             OnPropertyChanged(nameof(ZoomOut));
+            OnPropertyChanged(nameof(SelectAll));
+            OnPropertyChanged(nameof(Cut));
+            OnPropertyChanged(nameof(Copy));
+            OnPropertyChanged(nameof(Paste));
         }
 
         /// <summary>
@@ -281,6 +285,26 @@ namespace HandyControl.Properties.Langs
         ///   查找类似 缩小 的本地化字符串。
         /// </summary>
 		public string ZoomOut => Lang.ZoomOut;
+
+        /// <summary>
+        ///   查找类似 全选 的本地化字符串。
+        /// </summary>
+		public string SelectAll => Lang.SelectAll;
+
+        /// <summary>
+        ///   查找类似 剪切 的本地化字符串。
+        /// </summary>
+		public string Cut => Lang.Cut;
+
+        /// <summary>
+        ///   查找类似 复制 的本地化字符串。
+        /// </summary>
+		public string Copy => Lang.Copy;
+
+        /// <summary>
+        ///   查找类似 粘贴 的本地化字符串。
+        /// </summary>
+		public string Paste => Lang.Paste;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -492,5 +516,25 @@ namespace HandyControl.Properties.Langs
         ///   查找类似 缩小 的本地化字符串。
         /// </summary>
 		public static string ZoomOut = nameof(ZoomOut);
+
+        /// <summary>
+        ///   查找类似 全选 的本地化字符串。
+        /// </summary>
+		public static string SelectAll = nameof(SelectAll);
+
+        /// <summary>
+        ///   查找类似 剪切 的本地化字符串。
+        /// </summary>
+		public static string Cut = nameof(Cut);
+
+        /// <summary>
+        ///   查找类似 复制 的本地化字符串。
+        /// </summary>
+		public static string Copy = nameof(Copy);
+
+        /// <summary>
+        ///   查找类似 粘贴 的本地化字符串。
+        /// </summary>
+		public static string Paste = nameof(Paste);
     }
 }
