@@ -102,6 +102,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\LinearLayout.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\TipPlacement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DesignTime\IntellisenseResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\DataGridAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\ListBoxAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\MenuAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\TreeViewAttach.cs" />
@@ -173,6 +174,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ResourceDictionaryEx.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ResourceDictionaryHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\Theme.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Converter\PersianDateConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\ThemeAnimationHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ThemeDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ThemeManager.cs" />
