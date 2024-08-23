@@ -15,8 +15,13 @@
     <RepositoryType>git</RepositoryType>
     <SharedPath>..\..\Shared\HandyControl_Shared\Themes</SharedPath>
     <TargetFile>Themes\Theme.xaml</TargetFile>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <SignAssembly>true</SignAssembly>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HandyControl.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <SignAssembly>true</SignAssembly>
     <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\HandyControl.xml</DocumentationFile>
   </PropertyGroup>
