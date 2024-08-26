@@ -109,6 +109,7 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Resource.Embedder" Version="2.2.0" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="..\..\Shared\HandyControl_Shared\Resources\dropper.cur">
