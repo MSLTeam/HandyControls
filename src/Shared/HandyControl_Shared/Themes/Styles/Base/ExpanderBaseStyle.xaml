@@ -8,7 +8,7 @@
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
-            <ToggleButton x:Name="ToggleButton" Grid.Column="1" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Focusable="False" Padding="0,0,0,10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{TemplateBinding MinWidth}" Style="{StaticResource ToggleButtonCustom}">
+            <ToggleButton x:Name="ToggleButton" FontSize="{TemplateBinding FontSize}" Grid.Column="1" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Focusable="False" Padding="0,0,0,10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{TemplateBinding MinWidth}" Style="{StaticResource ToggleButtonCustom}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -43,7 +43,7 @@
                 <RowDefinition />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-            <ToggleButton x:Name="ToggleButton" Grid.Row="1" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Focusable="False" Padding="10,0,0,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinHeight="{TemplateBinding MinHeight}" Style="{StaticResource ToggleButtonCustom}">
+            <ToggleButton x:Name="ToggleButton" FontSize="{TemplateBinding FontSize}" Grid.Row="1" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Focusable="False" Padding="10,0,0,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinHeight="{TemplateBinding MinHeight}" Style="{StaticResource ToggleButtonCustom}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -73,7 +73,7 @@
                 <ColumnDefinition Width="Auto" />
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <ToggleButton x:Name="ToggleButton" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Focusable="False" Padding="0,0,0,10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{TemplateBinding MinWidth}" Style="{StaticResource ToggleButtonCustom}">
+            <ToggleButton x:Name="ToggleButton" FontSize="{TemplateBinding FontSize}" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Stretch" VerticalContentAlignment="Stretch" Focusable="False" Padding="0,0,0,10" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{TemplateBinding MinWidth}" Style="{StaticResource ToggleButtonCustom}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -108,7 +108,7 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <ToggleButton x:Name="ToggleButton" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Focusable="False" Padding="10,0,0,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinHeight="{TemplateBinding MinHeight}" Style="{StaticResource ToggleButtonCustom}">
+            <ToggleButton x:Name="ToggleButton" FontSize="{TemplateBinding FontSize}" hc:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Focusable="False" Padding="10,0,0,0" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Foreground="{TemplateBinding Foreground}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" MinHeight="{TemplateBinding MinHeight}" Style="{StaticResource ToggleButtonCustom}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
