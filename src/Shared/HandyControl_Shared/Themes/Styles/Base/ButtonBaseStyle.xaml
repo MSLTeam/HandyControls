@@ -6,6 +6,7 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="Background" Value="{DynamicResource RegionBrush}"/>
         <Setter Property="hc:BorderElement.CornerRadius" Value="{StaticResource DefaultCornerRadius}"/>
+        <Setter Property="hc:IconElement.Height" Value="12"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
