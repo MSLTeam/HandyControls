@@ -548,5 +548,21 @@ namespace HandyControl.Properties.Langs
                 return ResourceManager.GetString("Paste", resourceCulture);
             }
         }
+
+        public static string Enabled
+        {
+            get
+            {
+                return ResourceManager.GetString("Enabled", resourceCulture);
+            }
+        }
+
+        public static string Disabled
+        {
+            get
+            {
+                return ResourceManager.GetString("Disabled", resourceCulture);
+            }
+        }
     }
 }

@@ -82,6 +82,8 @@ namespace HandyControl.Properties.Langs
             OnPropertyChanged(nameof(Cut));
             OnPropertyChanged(nameof(Copy));
             OnPropertyChanged(nameof(Paste));
+            OnPropertyChanged(nameof(Enabled));
+            OnPropertyChanged(nameof(Disabled));
         }
 
         /// <summary>
@@ -305,6 +307,16 @@ namespace HandyControl.Properties.Langs
         ///   查找类似 粘贴 的本地化字符串。
         /// </summary>
 		public string Paste => Lang.Paste;
+
+        /// <summary>
+        ///   查找类似 已启用 的本地化字符串。
+        /// </summary>
+        public string Enabled => Lang.Enabled;
+
+        /// <summary>
+        ///   查找类似 已禁用 的本地化字符串。
+        /// </summary>
+        public string Disabled => Lang.Disabled;
 
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -536,5 +548,15 @@ namespace HandyControl.Properties.Langs
         ///   查找类似 粘贴 的本地化字符串。
         /// </summary>
 		public static string Paste = nameof(Paste);
+
+        /// <summary>
+        ///   查找类似 已启用 的本地化字符串。
+        /// </summary>
+		public static string Enabled = nameof(Enabled);
+
+        /// <summary>
+        ///   查找类似 已禁用 的本地化字符串。
+        /// </summary>
+		public static string Disabled = nameof(Disabled);
     }
 }

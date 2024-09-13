@@ -11694,6 +11694,16 @@ Source files:
   <Style x:Key="ToggleButtonSwitch.Small" BasedOn="{StaticResource ToggleButtonSwitch}" TargetType="ToggleButton">
     <Setter Property="Height" Value="16" />
   </Style>
+  <Style x:Key="ToggleButtonSwitch.Content" TargetType="ToggleButton" BasedOn="{StaticResource ToggleButtonSwitch}">
+    <Style.Triggers>
+      <Trigger Property="IsChecked" Value="True">
+        <Setter Property="Content" Value="{x:Static langs:Lang.Enabled}" />
+      </Trigger>
+      <Trigger Property="IsChecked" Value="False">
+        <Setter Property="Content" Value="{x:Static langs:Lang.Disabled}" />
+      </Trigger>
+    </Style.Triggers>
+  </Style>
   <Style x:Key="ToggleButtonFlip" BasedOn="{StaticResource BaseStyle}" TargetType="ToggleButton">
     <Setter Property="Background" Value="{DynamicResource RegionBrush}" />
     <Setter Property="HorizontalAlignment" Value="Center" />
