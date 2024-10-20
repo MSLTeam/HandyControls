@@ -11996,7 +11996,7 @@ Source files:
           <RowDefinition Height="Auto" />
           <RowDefinition />
         </Grid.RowDefinitions>
-        <Grid Background="{TemplateBinding NonClientAreaBackground}" Name="PART_NonClientArea" TextElement.Foreground="{TemplateBinding NonClientAreaForeground}">
+        <Grid Height="{TemplateBinding NonClientAreaHeight}" Background="{TemplateBinding NonClientAreaBackground}" Name="PART_NonClientArea" TextElement.Foreground="{TemplateBinding NonClientAreaForeground}">
           <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition Width="Auto" />
@@ -12019,9 +12019,9 @@ Source files:
                   <interactivity:InvokeCommandAction Command="{x:Static SystemCommands.CloseWindowCommand}" />
                 </interactivity:EventTrigger>
               </interactivity:Interaction.Triggers>
-              <Image IsHitTestVisible="False" Source="{TemplateBinding Icon}" VerticalAlignment="Center" Width="16" Height="16" />
+              <Image IsHitTestVisible="False" Source="{TemplateBinding Icon}" VerticalAlignment="Center" Width="{TemplateBinding NonClientAreaIconWidth}" Height="{TemplateBinding NonClientAreaIconHeight}" />
             </Button>
-            <TextBlock Grid.Column="1" Text="{TemplateBinding Title}" Padding="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TitleAlignment}" Margin="{TemplateBinding TitleMargin}">
+            <TextBlock Grid.Column="1" Text="{TemplateBinding Title}" Padding="10,0,0,0" FontSize="{TemplateBinding NonClientAreaFontsize}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TitleAlignment}" Margin="{TemplateBinding TitleMargin}">
               <TextBlock.Visibility>
                 <MultiBinding Converter="{StaticResource BooleanArr2VisibilityConverter}">
                   <MultiBinding.Bindings>
@@ -12118,7 +12118,7 @@ Source files:
         <AdornerDecorator>
           <local:SimplePanel>
             <ContentPresenter ClipToBounds="True" />
-            <Grid Background="{TemplateBinding NonClientAreaBackground}" Name="PART_NonClientArea" TextElement.Foreground="{TemplateBinding NonClientAreaForeground}" VerticalAlignment="Top">
+            <Grid Height="{TemplateBinding NonClientAreaHeight}" Background="{TemplateBinding NonClientAreaBackground}" Name="PART_NonClientArea" TextElement.Foreground="{TemplateBinding NonClientAreaForeground}" VerticalAlignment="Top">
               <Grid.ColumnDefinitions>
                 <ColumnDefinition />
                 <ColumnDefinition Width="Auto" />
@@ -12141,9 +12141,9 @@ Source files:
                       <interactivity:InvokeCommandAction Command="{x:Static SystemCommands.CloseWindowCommand}" />
                     </interactivity:EventTrigger>
                   </interactivity:Interaction.Triggers>
-                  <Image IsHitTestVisible="False" Source="{TemplateBinding Icon}" VerticalAlignment="Center" Width="16" Height="16" />
+                  <Image IsHitTestVisible="False" Source="{TemplateBinding Icon}" VerticalAlignment="Center" Width="{TemplateBinding NonClientAreaIconWidth}" Height="{TemplateBinding NonClientAreaIconHeight}" />
                 </Button>
-                <TextBlock Grid.Column="1" Text="{TemplateBinding Title}" Padding="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TitleAlignment}" Margin="{TemplateBinding TitleMargin}">
+                <TextBlock Grid.Column="1" Text="{TemplateBinding Title}" Padding="10,0,0,0" FontSize="{TemplateBinding NonClientAreaFontsize}" VerticalAlignment="Center" HorizontalAlignment="{TemplateBinding TitleAlignment}" Margin="{TemplateBinding TitleMargin}">
                   <TextBlock.Visibility>
                     <MultiBinding Converter="{StaticResource BooleanArr2VisibilityConverter}">
                       <MultiBinding.Bindings>

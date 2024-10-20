@@ -193,7 +193,7 @@ namespace HandyControl.Controls
 
         public static readonly DependencyProperty NonClientAreaHeightProperty = DependencyProperty.Register(
             nameof(NonClientAreaHeight), typeof(double), typeof(Window),
-            new PropertyMetadata(22.0));
+            new PropertyMetadata(30.0));
 
         public double NonClientAreaHeight
         {
@@ -237,6 +237,36 @@ namespace HandyControl.Controls
         {
             get => (bool) GetValue(ShowIconProperty);
             set => SetValue(ShowIconProperty, value);
+        }
+
+        public static readonly DependencyProperty NonClientAreaFontsizeProperty = DependencyProperty.Register(
+            nameof(NonClientAreaFontsize), typeof(double), typeof(Window),
+            new PropertyMetadata(12.0));
+
+        public double NonClientAreaFontsize
+        {
+            get => (double) GetValue(NonClientAreaFontsizeProperty);
+            set => SetValue(NonClientAreaFontsizeProperty, value);
+        }
+
+        public static readonly DependencyProperty NonClientAreaIconWidthProperty = DependencyProperty.Register(
+            nameof(NonClientAreaIconWidth), typeof(double), typeof(Window),
+            new PropertyMetadata(16.0));
+
+        public double NonClientAreaIconWidth
+        {
+            get => (double) GetValue(NonClientAreaIconWidthProperty);
+            set => SetValue(NonClientAreaIconWidthProperty, value);
+        }
+
+        public static readonly DependencyProperty NonClientAreaIconHeightProperty = DependencyProperty.Register(
+            nameof(NonClientAreaIconHeight), typeof(double), typeof(Window),
+            new PropertyMetadata(16.0));
+
+        public double NonClientAreaIconHeight
+        {
+            get => (double) GetValue(NonClientAreaIconHeightProperty);
+            set => SetValue(NonClientAreaIconHeightProperty, value);
         }
 
         #endregion
@@ -441,7 +471,8 @@ namespace HandyControl.Controls
                     {
                         if ((int) wparam == InteropValues.SC_MAXIMIZE || (int) wparam == InteropValues.SC_RESTORE)
                         {
-                            handled = true;
+                            if(WindowState!=WindowState.Minimized)
+                                handled = true;
                         }
                     }
                     if (!ShowMinButton)
