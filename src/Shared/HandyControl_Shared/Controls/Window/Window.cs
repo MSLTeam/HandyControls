@@ -301,11 +301,15 @@ namespace HandyControl.Controls
             {
                 BorderThickness = new Thickness();
                 _tempNonClientAreaHeight = NonClientAreaHeight;
+                // 下面这个一加一减不要动，否则会出bug
                 NonClientAreaHeight += 8;
+                NonClientAreaHeight -= 8;
             }
             else
             {
                 BorderThickness = _actualBorderThickness;
+                // 这里的也是，不要动
+                NonClientAreaHeight += 8;
                 NonClientAreaHeight = _tempNonClientAreaHeight;
             }
 
