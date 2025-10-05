@@ -1660,7 +1660,7 @@ Source files:
                 <Condition Property="IsSelected" Value="True" />
               </MultiTrigger.Conditions>
               <Setter Property="Background" TargetName="Bd" Value="{DynamicResource PrimaryBrush}" />
-              <Setter Property="Foreground" Value="White" />
+              <Setter Property="Foreground" Value="{DynamicResource TextIconBrush}" />
             </MultiTrigger>
           </ControlTemplate.Triggers>
         </ControlTemplate>
@@ -4000,16 +4000,18 @@ Source files:
     </Setter>
   </Style>
   <Style x:Key="ToolTipBaseStyle" TargetType="ToolTip">
-    <Setter Property="Padding" Value="0,6" />
-    <Setter Property="Background" Value="White" />
+    <Setter Property="Padding" Value="{StaticResource DefaultControlPadding}" />
+    <Setter Property="Background" Value="{DynamicResource RegionBrush}" />
+    <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
+    <Setter Property="BorderThickness" Value="1" />
     <Setter Property="Foreground" Value="{DynamicResource PrimaryTextBrush}" />
     <Setter Property="FontSize" Value="12" />
-    <Setter Property="hc:BorderElement.CornerRadius" Value="2" />
+    <Setter Property="hc:BorderElement.CornerRadius" Value="{StaticResource DefaultCornerRadius}" />
     <Setter Property="Template">
       <Setter.Value>
         <ControlTemplate TargetType="ToolTip">
-          <Border Effect="{StaticResource EffectShadow2}" Margin="8" Background="{DynamicResource RegionBrush}" Padding="{TemplateBinding Padding}" BorderThickness="1" CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{DynamicResource BorderBrush}">
-            <ContentPresenter Margin="10,0" />
+          <Border Margin="8" Effect="{StaticResource EffectShadow2}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" BorderThickness="1" CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent}}" BorderBrush="{TemplateBinding BorderBrush}">
+            <ContentPresenter />
           </Border>
         </ControlTemplate>
       </Setter.Value>
@@ -10614,6 +10616,14 @@ Source files:
         </ControlTemplate>
       </Setter.Value>
     </Setter>
+    <Style.Triggers>
+      <Trigger Property="hc:Growl.TransitionMode" Value="Bottom2Top">
+        <Setter Property="Margin" Value="10,0,10,10" />
+      </Trigger>
+      <Trigger Property="hc:Growl.TransitionMode" Value="Bottom2TopWithFade">
+        <Setter Property="Margin" Value="10,0,10,10" />
+      </Trigger>
+    </Style.Triggers>
   </Style>
   <Style TargetType="{x:Type local:BusyIndicator}">
     <Setter Property="BusyContent" Value="{x:Static langs:Lang.BusyIndicatorLoading}" />
@@ -11015,7 +11025,6 @@ Source files:
     <Setter Property="Margin" Value="5,0" />
   </Style>
   <Style x:Key="PaginationButtonStyle" BasedOn="{StaticResource BaseStyle}" TargetType="RadioButton">
-    <Setter Property="GroupName" Value="1" />
     <Setter Property="MinWidth" Value="30" />
     <Setter Property="Background" Value="{DynamicResource RegionBrush}" />
     <Setter Property="BorderBrush" Value="{DynamicResource BorderBrush}" />
@@ -11089,7 +11098,7 @@ Source files:
                   <interactivity:EventToCommand Command="interactivity:ControlCommands.Selected" PassEventArgsToCommand="True" />
                 </interactivity:RoutedEventTrigger>
               </interactivity:Interaction.Triggers>
-              <RadioButton Name="PART_ButtonFirst" Content="1" IsChecked="True" Style="{TemplateBinding PaginationButtonStyle}" />
+              <RadioButton Name="PART_ButtonFirst" IsChecked="True" Style="{TemplateBinding PaginationButtonStyle}" />
               <Border Name="PART_MoreLeft" Cursor="No" Margin="-1,0,0,0" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{DynamicResource SecondaryRegionBrush}" Padding="10,0">
                 <local:SimpleText FontWeight="Bold" Foreground="{DynamicResource SecondaryTextBrush}" Text="..." VerticalAlignment="Center" />
               </Border>
@@ -11097,7 +11106,7 @@ Source files:
               <Border Name="PART_MoreRight" Cursor="No" Margin="-1,0,0,0" BorderThickness="1" BorderBrush="{TemplateBinding BorderBrush}" Background="{DynamicResource SecondaryRegionBrush}" Padding="10,0">
                 <local:SimpleText FontWeight="Bold" Foreground="{DynamicResource SecondaryTextBrush}" Text="..." VerticalAlignment="Center" />
               </Border>
-              <RadioButton Name="PART_ButtonLast" Content="10" Style="{TemplateBinding PaginationButtonStyle}" />
+              <RadioButton Name="PART_ButtonLast" Style="{TemplateBinding PaginationButtonStyle}" />
             </StackPanel>
             <Button x:Name="PART_ButtonRight" MinWidth="30" Padding="10,8" local:IconElement.Geometry="{StaticResource RightGeometry}" local:BorderElement.CornerRadius="{Binding Path=(hc:BorderElement.CornerRadius),RelativeSource={RelativeSource TemplatedParent},Converter={StaticResource CornerRadiusSplitConverter},ConverterParameter='0,1,1,0'}" Margin="-1,0,0,0" Command="interactivity:ControlCommands.Next" />
             <local:NumericUpDown x:Name="PART_Jump" IsEnabled="{TemplateBinding IsJumpEnabled}" Visibility="{TemplateBinding IsJumpEnabled,Converter={StaticResource Boolean2VisibilityConverter}}" Margin="6,0,0,0" Maximum="{Binding MaxPageCount,RelativeSource={RelativeSource TemplatedParent}}" Minimum="1" />
@@ -15310,8 +15319,8 @@ Source files:
                 <RowDefinition />
               </Grid.RowDefinitions>
               <local:WatermarkTextBox Grid.RowSpan="2" Focusable="True" Watermark="{Binding Path=(hc:InfoElement.Placeholder),RelativeSource={RelativeSource TemplatedParent}}" CaretBrush="{TemplateBinding CaretBrush}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_TextBox" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{TemplateBinding IsReadOnly}" />
-              <Button x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource ButtonIcon}" />
-              <Button x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource ButtonIcon}" />
+              <RepeatButton x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource RepeatButtonIcon}" />
+              <RepeatButton x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource RepeatButtonIcon}" />
             </Grid>
           </local:SimplePanel>
           <ControlTemplate.Triggers>
@@ -15350,8 +15359,8 @@ Source files:
           <RowDefinition />
         </Grid.RowDefinitions>
         <local:WatermarkTextBox Grid.RowSpan="2" Focusable="True" Watermark="{Binding Path=(hc:InfoElement.Placeholder),RelativeSource={RelativeSource TemplatedParent}}" CaretBrush="{TemplateBinding CaretBrush}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_TextBox" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{TemplateBinding IsReadOnly}" />
-        <Button x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource ButtonIcon}" />
-        <Button x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource ButtonIcon}" />
+        <RepeatButton x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource RepeatButtonIcon}" />
+        <RepeatButton x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource RepeatButtonIcon}" />
       </Grid>
     </Grid>
     <ControlTemplate.Triggers>
@@ -15392,8 +15401,8 @@ Source files:
           <RowDefinition />
         </Grid.RowDefinitions>
         <local:WatermarkTextBox Grid.RowSpan="2" Focusable="True" Watermark="{Binding Path=(hc:InfoElement.Placeholder),RelativeSource={RelativeSource TemplatedParent}}" CaretBrush="{TemplateBinding CaretBrush}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_TextBox" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{TemplateBinding IsReadOnly}" />
-        <Button x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource ButtonIcon}" />
-        <Button x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource ButtonIcon}" />
+        <RepeatButton x:Name="UpButton" VerticalContentAlignment="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource RepeatButtonIcon}" />
+        <RepeatButton x:Name="DownButton" VerticalContentAlignment="Top" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="1" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource RepeatButtonIcon}" />
       </Grid>
     </Grid>
     <ControlTemplate.Triggers>
@@ -15445,8 +15454,8 @@ Source files:
         </Grid.RowDefinitions>
         <local:WatermarkTextBox Grid.RowSpan="2" Focusable="True" Watermark="{Binding Path=(hc:InfoElement.Placeholder),RelativeSource={RelativeSource TemplatedParent}}" CaretBrush="{TemplateBinding CaretBrush}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_TextBox" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{TemplateBinding IsReadOnly}" />
         <Button HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="2" Height="Auto" Width="Auto" Command="interactivity:ControlCommands.Clear" local:IconElement.Width="14" Padding="0,0,2,0" Visibility="Collapsed" Name="ButtonClear" Focusable="False" Grid.Column="1" Style="{StaticResource ButtonIcon}" local:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" Foreground="{TemplateBinding BorderBrush}" />
-        <Button x:Name="UpButton" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource ButtonIcon}" />
-        <Button x:Name="DownButton" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource ButtonIcon}" />
+        <RepeatButton x:Name="UpButton" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource RepeatButtonIcon}" />
+        <RepeatButton x:Name="DownButton" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource RepeatButtonIcon}" />
       </Grid>
     </Grid>
     <ControlTemplate.Triggers>
@@ -15493,8 +15502,8 @@ Source files:
         </Grid.RowDefinitions>
         <local:WatermarkTextBox Grid.RowSpan="2" Focusable="True" Watermark="{Binding Path=(hc:InfoElement.Placeholder),RelativeSource={RelativeSource TemplatedParent}}" CaretBrush="{TemplateBinding CaretBrush}" Foreground="{TemplateBinding Foreground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" x:Name="PART_TextBox" Padding="{TemplateBinding Padding}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" IsReadOnly="{TemplateBinding IsReadOnly}" />
         <Button HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="2" Height="Auto" Width="Auto" Command="interactivity:ControlCommands.Clear" local:IconElement.Width="14" Padding="0,0,2,0" Visibility="Collapsed" Name="ButtonClear" Focusable="False" Grid.Column="1" Style="{StaticResource ButtonIcon}" local:IconElement.Geometry="{StaticResource DeleteFillCircleGeometry}" Foreground="{TemplateBinding BorderBrush}" />
-        <Button x:Name="UpButton" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource ButtonIcon}" />
-        <Button x:Name="DownButton" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource ButtonIcon}" />
+        <RepeatButton x:Name="UpButton" VerticalContentAlignment="Bottom" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="0" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Prev" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource UpGeometry}" Style="{StaticResource RepeatButtonIcon}" />
+        <RepeatButton x:Name="DownButton" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" IsEnabled="{TemplateBinding IsReadOnly, Converter={StaticResource Boolean2BooleanReConverter}}" Height="Auto" Width="Auto" Grid.Row="1" Visibility="{TemplateBinding ShowUpDownButton,Converter={StaticResource Boolean2VisibilityConverter}}" Command="interactivity:ControlCommands.Next" local:IconElement.Height="6" local:IconElement.Width="14" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ThicknessSplitConverter}, ConverterParameter='0,0,1,0'}" Grid.Column="2" Foreground="{TemplateBinding BorderBrush}" local:IconElement.Geometry="{StaticResource DownGeometry}" Style="{StaticResource RepeatButtonIcon}" />
       </Grid>
     </Grid>
     <ControlTemplate.Triggers>
@@ -16751,15 +16760,16 @@ Source files:
                       <RowDefinition Height="Auto" />
                       <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
-                    <ToggleButton Margin="0,0,0,6" local:DataGridAttach.CurrentDataGrid="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType={x:Type DataGrid}}}" local:DataGridAttach.IsSelectAll="{Binding IsChecked,RelativeSource={RelativeSource Self}}" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType=DataGrid},Converter={StaticResource DoubleMinConverter}}" local:IconSwitchElement.Geometry="{StaticResource AllGeometry}" local:IconSwitchElement.GeometrySelected="{StaticResource AllGeometry}" Foreground="{DynamicResource PrimaryBrush}" Style="{StaticResource ToggleButtonIconTransparent}">
-                      <ToggleButton.Visibility>
+                    <local:SimplePanel Margin="0,0,0,6" Width="{Binding CellsPanelHorizontalOffset, RelativeSource={RelativeSource AncestorType=DataGrid},Converter={StaticResource DoubleMinConverter}}">
+                      <CheckBox local:SelectAllButtonAttach.Target="{Binding RelativeSource={RelativeSource AncestorType=DataGrid}}" HorizontalAlignment="Center" />
+                      <local:SimplePanel.Visibility>
                         <MultiBinding Converter="{StaticResource DataGridSelectAllButtonVisibilityConverter}">
                           <Binding Path="HeadersVisibility" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
                           <Binding Path="(hc:DataGridAttach.ShowSelectAllButton)" RelativeSource="{RelativeSource AncestorType=DataGrid}" />
                         </MultiBinding>
-                      </ToggleButton.Visibility>
-                    </ToggleButton>
-                    <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
+                      </local:SimplePanel.Visibility>
+                    </local:SimplePanel>
+                    <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter" Margin="0,0,0,6" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="1" Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType=DataGrid}}" />
                     <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" CanContentScroll="{TemplateBinding CanContentScroll}" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" />
                     <local:ToggleBlock VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Grid.ColumnSpan="3" Grid.Column="0" Grid.Row="1" IsChecked="{Binding HasItems, RelativeSource={RelativeSource AncestorType=DataGrid}, Mode=OneWay}">
                       <local:ToggleBlock.UnCheckedContent>
