@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,6 +6,8 @@ using System.Windows.Interop;
 using System.Windows.Media;
 using HandyControl.Themes;
 using HandyControl.Tools.Interop;
+using System.Collections.Generic;
+
 #if NET40
 using Microsoft.Windows.Shell;
 #else
@@ -137,6 +139,7 @@ stylesetted:;
         return true;
     }
 
+    private static readonly Dictionary<IntPtr, TypedEventHandler<ThemeManager, object>> _themeHandlers = new();
     /// <summary>
     /// Applies selected background effect to <c>hWnd</c> by it's pointer.
     /// </summary>
@@ -146,10 +149,34 @@ stylesetted:;
     public static bool Apply(this IntPtr handle, BackdropType type, bool force = false)
     {
         if (!force && (!IsSupported(type))) { return false; }
-
         if (handle == IntPtr.Zero) { return false; }
 
-        if (ThemeManager.Current.ActualApplicationTheme == ApplicationTheme.Dark) { ApplyDarkMode(handle); }
+        if (ThemeManager.Current.ActualApplicationTheme == ApplicationTheme.Dark)
+        {
+            ApplyDarkMode(handle);
+        }
+
+        // 移除旧的处理程序(如果存在)
+        if (_themeHandlers.ContainsKey(handle))
+        {
+            ThemeManager.Current.ActualApplicationThemeChanged -= _themeHandlers[handle];
+        }
+
+        // 创建并保存新的处理程序
+        TypedEventHandler<ThemeManager, object> handler = (s, e) =>
+        {
+            if (ThemeManager.Current.ActualApplicationTheme == ApplicationTheme.Dark)
+            {
+                ApplyDarkMode(handle);
+            }
+            else
+            {
+                RemoveDarkMode(handle);
+            }
+        };
+
+        _themeHandlers[handle] = handler;
+        ThemeManager.Current.ActualApplicationThemeChanged += handler;
 
         return type switch
         {
@@ -210,15 +237,19 @@ stylesetted:;
         if (handle == IntPtr.Zero) return;
 
         int backdropPvAttribute = (int) InteropValues.DWMSBT.DWMSBT_DISABLE;
-
         RemoveDarkMode(handle);
 
-        InteropMethods.DwmSetWindowAttribute(handle, InteropValues.DWMWINDOWATTRIBUTE.DWMWA_MICA_EFFECT, ref _pvFalseAttribute,
-            Marshal.SizeOf(typeof(int)));
+        // 正确移除事件处理程序
+        if (_themeHandlers.TryGetValue(handle, out var handler))
+        {
+            ThemeManager.Current.ActualApplicationThemeChanged -= handler;
+            _themeHandlers.Remove(handle);
+        }
 
+        InteropMethods.DwmSetWindowAttribute(handle, InteropValues.DWMWINDOWATTRIBUTE.DWMWA_MICA_EFFECT,
+            ref _pvFalseAttribute, Marshal.SizeOf(typeof(int)));
         InteropMethods.DwmSetWindowAttribute(handle, InteropValues.DWMWINDOWATTRIBUTE.DWMWA_SYSTEMBACKDROP_TYPE,
-            ref backdropPvAttribute,
-            Marshal.SizeOf(typeof(int)));
+            ref backdropPvAttribute, Marshal.SizeOf(typeof(int)));
     }
 
     /// <summary>
