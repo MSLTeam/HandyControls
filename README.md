@@ -2,31 +2,26 @@
     <img align="center" src="https://raw.githubusercontent.com/handyorg/HandyOrgResource/master/HandyControl/Resources/Cover.png">
 </p>
 
+<h3 align="center">
+  <a href="https://ghost1372.github.io">Documentation</a>
+  <span> · </span>
+  <a href="https://github.com/ghost1372/HandyControls/releases">Release notes</a>
+  <span> · </span>
+  <a href="https://github.com/ghost1372/HandyControls/tree/develop/src/Shared/HandyControlDemo_Shared">Samples</a>
+  <span> · </span>
+  <a href="https://apps.microsoft.com/detail/HandyControl/9nxrsbg32mff?launch=true
+	&mode=mini">Gallery App (Store)</a>
+</h3>
+
 <p align="center">
     <img alt="dotnet-version" src="https://img.shields.io/badge/.net-%3E%3D4.0-blue.svg"></img>
-    <img alt="csharp-version" src="https://img.shields.io/badge/C%23-latest-blue.svg"></img>
-    <img alt="IDE-version" src="https://img.shields.io/badge/IDE-vs2022-blue.svg"></img>
+    <img alt="build" src="https://img.shields.io/github/actions/workflow/status/Ghost1372/HandyControls/build.yml?logo=github"/>
     <a href="https://www.nuget.org/packages/HandyControls">
         <img alt="nuget-version" src="https://img.shields.io/nuget/v/HandyControls.svg"></img>
-    </a> 
-    <a href="https://github.com/ghost1372/HandyControls/actions?query=workflow%3Abuild">
-        <img alt="Github-build-status" src="https://github.com/ghost1372/HandyControls/workflows/build/badge.svg"></img>
     </a>
     <a href="https://www.nuget.org/packages/HandyControls">
-        <img alt="Nuget" src="https://img.shields.io/nuget/dt/handycontrols"></img>
-    </a> 
-    <a href="https://ghost1372.github.io">
-        <img alt="Document" src="https://img.shields.io/badge/Document-Updated-success"></img>
-    </a> 
-</p>
-
-<br>
-<p align="center">
-	<b>🙌 Donate Bitcoin with <a href="https://link.trustwallet.com/send?coin=0&address=bc1qzs4kt4aeqym6gsde669g5rksv4swjhzjqqp23a">Trust</a>🙌</b><br>
-	<b>🙌 Donate ETH with <a href="https://link.trustwallet.com/send?coin=60&address=0x40Db4476c1D498b167f76A2c7ED9D45b65eb5d0C">Trust</a>🙌</b><br><br>
-	<b>🙌 Bitcoin: bc1qzs4kt4aeqym6gsde669g5rksv4swjhzjqqp23a<br></b>
-	<b>🙌 ETH: 0x40Db4476c1D498b167f76A2c7ED9D45b65eb5d0C</b>
-</p>
+        <img alt="Downloads" src="https://img.shields.io/nuget/dt/HandyControls?label=Downloads/Install"></img>
+    </a>
 <br>
 
 # Welcome to HandyControl
@@ -133,6 +128,15 @@ This project is based on [HandyControl](https://github.com/handyOrg/HandyControl
 
 if your project is not listed here, let us know! 😀
 
+## 🚀 Explore Our Gallery App 🚀
+
+> [!NOTE]
+>  Want to see HandyControl in action? Head over to our Gallery App for a hands-on experience. You’ll find practical examples, usage scenarios, and interactive demos that showcase the power of our toolkit. Download from Microsoft Store.
+
+<a href="https://apps.microsoft.com/detail/HandyControl/9nxrsbg32mff?launch=true
+    &mode=mini">
+    <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+</a>
 
 ## Documentation
 
@@ -180,6 +184,10 @@ Step 4: Enjoy coding
 
 ## Latest examples
 
+### ConfettiCannon
+
+![ConfettiCannon](https://raw.githubusercontent.com/HandyOrg/HandyOrgResource/master/HandyControl/Resources/ConfettiCannon.gif)
+
 ### WinUI Mica Material
 
 ![image](https://user-images.githubusercontent.com/9213496/139542436-037f0233-e8c6-4c04-9e16-4d50035ed0b3.png)
@@ -199,11 +207,11 @@ Step 4: Enjoy coding
 
 ![UniformSpacingPanel](https://raw.githubusercontent.com/HandyOrg/HandyOrgResource/master/HandyControl/Resources/UniformSpacingPanel.png)
 
+## History publication
+
 ### FlexPanel
 
 ![FlexPanel](https://raw.githubusercontent.com/HandyOrg/HandyOrgResource/master/HandyControl/Resources/FlexPanel.gif)
-
-## History publication
 
 ### CheckComboBox
 

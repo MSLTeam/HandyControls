@@ -30,6 +30,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\PasswordBoxAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\RectangleAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\ScrollViewerAttach.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\SelectAllButtonAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\TextBlockAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Attach\ToggleButtonAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Base\AdornerElement.cs" />
@@ -37,6 +38,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Block\RunningBlock\RunningBorder.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Button\SplitButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Carousel\CarouselItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConfettiCannon\ConfettiCannon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\ConfettiCannon\ConfettiCannonContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Dialog\DialogContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Drawer\DrawerContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Growl\GrowlWindow.cs" />
@@ -56,11 +59,13 @@
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Card.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Notification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Poptip.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\VisualAdornerContainer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Other\Watermark.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\AxleCanvas.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\ClipGrid.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\FlexPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\ElementGroup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\InverseStackPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\SimpleStackPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\Panel\UniformSpacingPanel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Controls\PropertyGrid\Editors\DatePropertyEditor.cs" />
@@ -102,6 +107,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\LinearLayout.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\TipPlacement.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DesignTime\IntellisenseResources.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\BrushAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\DataGridAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\ListBoxAttach.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Attach\MenuAttach.cs" />
@@ -110,6 +116,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\BindToEnum\EnumBindingSourceExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\BindToEnum\EnumDescriptionTypeConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\BindToEnum\LocalizedDescriptionAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Controls\Carousel!.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Controls\CheckTreeView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Controls\CoverView.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Controls\Loading\BusyIndicator.cs" />
@@ -175,6 +182,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ResourceDictionaryHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\Theme.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Converter\PersianDateConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Markup\ColorBrightnessExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Github Update\UpdateHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Github Update\UpdateHelperJsonContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Github Update\UpdateInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\ProcessInfoHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\ThemeAnimationHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ThemeDictionary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\ThemeManager\ThemeManager.cs" />
@@ -248,14 +260,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\GenericCompare.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\GlobalDataHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\IniHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Internals\DataContractJavaScriptConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Internals\PolymorphicJsonConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\Internals\ReleaseInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\MicaHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\OSVersionHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\RegistryHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\TaskbarHelper.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\UpdateHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\WindowHelper!.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Helper\XmlHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Logging\Internals\Formatters\DefaultLoggerFormatter.cs" />
@@ -271,8 +280,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Markup\Internals\MultiBindingExtensionBase.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)HandyControls\Tools\Markup\UpdatableMarkupExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Data\Enum\RunningDirection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Tools\Helper\ControlTokenManager`1.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Input\SimpleMouseBinding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Extension\LangExtension.cs" />
-    <Compile Include="..\..\Shared\HandyControl_Shared\Input\SimpleMouseBinding.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interactivity\EventToCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interactivity\IEventArgsConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Interactivity\LaunchUriOrFileAction.cs" />
@@ -526,10 +536,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Interop\InteropValues.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Interop\Handle\SafeFileMappingHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\Interop\Handle\WpfSafeHandle.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Collections\Pool\IPool`1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Collections\Pool\SimplePool`1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Collections\Pool\SynchronizedPool`1.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Collections\Queue\Deque`1.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RegexJudgment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\RegexPatterns.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Tools\StyleSelector\ButtonGroupItemStyleSelector.cs" />
@@ -1136,6 +1142,7 @@
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.Col.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.ColorPicker.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.CompareSlider.icon.bmp" />
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.ConfettiCannon.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.ContextMenuButton.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.ContextMenuToggleButton.icon.bmp" />
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Resources\Icons\HandyControl.Controls.CoverFlow.icon.bmp" />

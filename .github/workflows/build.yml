@@ -21,12 +21,13 @@ jobs:
       - name: Setup .NET Core SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: |
+            8.x.x
+            9.x.x
 
       - name: Build
         working-directory: ./build
         run: |
             dotnet new tool-manifest
             dotnet tool install cake.tool --version 4.0.0
-            dotnet tool install minver-cli --version 3.0.0
             dotnet cake
