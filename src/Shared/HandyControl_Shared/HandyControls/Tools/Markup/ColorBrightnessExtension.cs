@@ -1,4 +1,4 @@
-﻿#if !NET40
+#if !NET40
 using System;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -11,8 +11,8 @@ namespace HandyControl.Tools;
 /// <Rectangle Width="40" Height="40">
 ///     <Rectangle.Fill>
 ///         <SolidColorBrush Color = "{dev:ColorBrightness Color=Red, CorrectionFactor=-0.3}" />
-///     </ Rectangle.Fill >
-/// </ Rectangle >
+///     </Rectangle.Fill >
+/// </Rectangle >
 /// </code>
 /// </summary>
 [MarkupExtensionReturnType(typeof(Color))]
