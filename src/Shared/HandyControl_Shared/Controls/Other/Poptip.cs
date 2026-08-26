@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
@@ -237,46 +237,49 @@ public class Poptip : AdornerElement
         switch (popupPlacement)
         {
             case PlacementType.LeftTop:
+                offsetX = -width;
                 break;
             case PlacementType.Left:
+                offsetX = -width;
                 offsetY = -(height - targetHeight) * 0.5;
                 break;
             case PlacementType.LeftBottom:
+                offsetX = -width;
                 offsetY = -(height - targetHeight);
                 break;
             case PlacementType.TopLeft:
-                offsetX = width;
+                offsetX = -width;
                 offsetY = -height;
                 break;
             case PlacementType.Top:
-                offsetX = (width + targetWidth) * 0.5;
+                offsetX = 0;
                 offsetY = -height;
                 break;
             case PlacementType.TopRight:
-                offsetX = targetWidth;
+                offsetX = targetWidth - width;
                 offsetY = -height;
                 break;
             case PlacementType.RightTop:
-                offsetX = width + targetWidth;
+                offsetX = targetWidth;
                 break;
             case PlacementType.Right:
-                offsetX = width + targetWidth;
+                offsetX = targetWidth;
                 offsetY = -(height - targetHeight) * 0.5;
                 break;
             case PlacementType.RightBottom:
-                offsetX = width + targetWidth;
+                offsetX = targetWidth;
                 offsetY = -(height - targetHeight);
                 break;
             case PlacementType.BottomLeft:
-                offsetX = width;
+                offsetX = 0;
                 offsetY = targetHeight;
                 break;
             case PlacementType.Bottom:
-                offsetX = (width + targetWidth) * 0.5;
+                offsetX = (targetWidth - width) * 0.5;
                 offsetY = targetHeight;
                 break;
             case PlacementType.BottomRight:
-                offsetX = targetWidth;
+                offsetX = targetWidth - width;
                 offsetY = targetHeight;
                 break;
             default:
